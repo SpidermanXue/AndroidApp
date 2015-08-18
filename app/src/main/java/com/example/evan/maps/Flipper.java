@@ -43,6 +43,7 @@ public class Flipper extends Activity implements View.OnClickListener {
         try{
             Class rclass= Class.forName("com.example.evan.maps.FlipperResult");
             Intent ourintent = new Intent(Flipper.this, rclass);
+            //pass a number tp flipperresult
             ourintent.putExtra("result",randomnum.nextInt(2));
             startActivity(ourintent);
         }catch(ClassNotFoundException e){
@@ -51,4 +52,13 @@ public class Flipper extends Activity implements View.OnClickListener {
         }
 
     }
+
+    @Override
+    protected void onPause(){
+        //when jump to flipperresult , onPause of splash is called
+        //called after jump to myactivity class
+        super.onPause();
+        finish(); //kill the splash class.
+    }
+
 }

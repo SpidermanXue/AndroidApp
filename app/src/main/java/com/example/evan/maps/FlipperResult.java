@@ -48,8 +48,16 @@ public class FlipperResult extends Activity implements View.OnClickListener{
             e.printStackTrace();
 
         }
-
     }
+
+    @Override
+    protected void onPause(){
+        //when jump to flipper , onPause of splash is called
+        //called after jump to myactivity class
+        super.onPause();
+        finish(); //kill the splash class.
+    }
+
 
 
 }
