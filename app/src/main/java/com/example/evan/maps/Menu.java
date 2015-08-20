@@ -12,7 +12,7 @@ import android.content.Intent;
  */
 public class Menu extends ListActivity{
     String classes[] = { "MyActivity", "TextPlay", "Email",
-            "MapsActivity","Flipper","example5","example6"};
+            "MapsActivity","Flipper","SpinWheel","BigWheel"};
 
 
     @Override
