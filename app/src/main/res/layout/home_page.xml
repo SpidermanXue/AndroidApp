@@ -3,7 +3,20 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="#ffffff" android:id="@+id/layout0">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/u2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_marginLeft="59dp"
+        />
+
     <TextView
+        android:layout_below="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -63,17 +76,10 @@
             android:padding="10pt"
             android:layout_alignTop="@+id/textView2"
             android:layout_toRightOf="@+id/textView2"
-            android:layout_marginLeft="24dp" />
+            android:layout_marginLeft="60dp" />
 
     </RelativeLayout>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="91dp" />
 
 
 </RelativeLayout>
