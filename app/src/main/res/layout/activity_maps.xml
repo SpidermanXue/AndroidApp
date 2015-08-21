@@ -2,15 +2,31 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/address"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity= "center"
-        android:hint="Enter Address" />
+        android:id="@+id/doubleedit"
+        android:orientation="vertical">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/address"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity= "center"
+            android:hint="Enter Address" />
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_name"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity= "center"
+            android:hint="Enter Your Search" />
+
+
+    </LinearLayout>
     <Button
         android:id="@+id/mapbutton1"
         android:layout_width="wrap_content"
@@ -19,7 +35,7 @@
         android:layout_alignParentRight="true"
         android:onClick="onClick_Surrey"
         android:text="Surrey"
-        android:layout_below="@+id/address"
+        android:layout_below="@+id/doubleedit"
         />
     <Button
         android:id="@+id/mapbutton2"
@@ -28,7 +44,7 @@
         android:layout_alignParentTop="false"
         android:layout_centerHorizontal="true"
         android:onClick="onClick_Search"
-        android:layout_below="@+id/address"
+        android:layout_below="@+id/doubleedit"
         android:text="Search"/>
     <Button
         android:id="@+id/mapbutton3"
@@ -37,9 +53,8 @@
         android:layout_alignParentTop="false"
         android:layout_alignParentLeft="true"
         android:onClick="onClick_Mylocation"
-        android:layout_below="@+id/address"
+        android:layout_below="@+id/doubleedit"
         android:text="MyLocation"/>
-
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"

@@ -25,11 +25,14 @@ import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements LocationListener {
 
+    private static final String GOOGLE_API_KEY = "AIzaSyBj4eNM5-fJgcTHdtuoAu4b_RzNawxo4lQ";
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private final LatLng LOCATION_BURNABY = new LatLng(49.27645, -122.917587);
     private final LatLng LOCATION_SURREY = new LatLng(49.27645, -122.847587);
     private final LatLng LOCATION_CITY = new LatLng(49.27645, -122.407587); //zuobiao
     private EditText getAddress;
+    private EditText search;
+    private int PROXIMITY_RADIUS = 5000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,7 +150,9 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
 
     public void onClick_Search(View v) {
         getAddress = (EditText) findViewById(R.id.address);
+        search = (EditText) findViewById(R.id.search_name);
         String strAddress = getAddress.getText().toString();
+        String search_name = search.getText().toString();
         Geocoder coder = new Geocoder(this);
         List<Address> address;
         LatLng p1 = null;
@@ -160,17 +165,33 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                 System.out.println("can not find");
             }
             Address location = address.get(0);
-            location.getLatitude();
-            location.getLongitude();
+            double latitude = location.getLatitude();
+            double longitude = location.getLongitude();
 
             System.out.println(location.getLatitude());
 
             p1 = new LatLng(location.getLatitude(), location.getLongitude());
 
             mMap.setMapType((GoogleMap.MAP_TYPE_NORMAL));
-            CameraUpdate update = CameraUpdateFactory.newLatLngZoom(p1, 9);
+            CameraUpdate update = CameraUpdateFactory.newLatLngZoom(p1, 12);
             mMap.addMarker(new MarkerOptions().position(p1).title("myhome"));
             mMap.animateCamera(update);
+            if(!search_name.matches("")) {
+                System.out.println("searching place");
+                StringBuilder googlePlacesUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+                //https://maps.googleapis.com/maps/api/geocode/json?address=1
+                googlePlacesUrl.append("location=" + latitude + "," + longitude);
+                googlePlacesUrl.append("&radius=" + PROXIMITY_RADIUS);
+                googlePlacesUrl.append("&types=" + search_name);
+                googlePlacesUrl.append("&sensor=true");
+                googlePlacesUrl.append("&key=" + GOOGLE_API_KEY);
+
+                GooglePlacesReadTask googlePlacesReadTask = new GooglePlacesReadTask();
+                Object[] toPass = new Object[2];
+                toPass[0] = mMap;
+                toPass[1] = googlePlacesUrl.toString();
+                googlePlacesReadTask.execute(toPass);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
