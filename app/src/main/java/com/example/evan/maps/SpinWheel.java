@@ -3,15 +3,18 @@ package com.example.evan.maps;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import android.widget.ImageView;
 import android.widget.Button;
+import android.widget.ImageView;
 /**
  * Created by Evan on 8/18/15.
  */
@@ -39,6 +42,12 @@ public class SpinWheel extends Activity implements View.OnClickListener{
         // load the image only once
         if (imageOriginal == null) {
             imageOriginal = BitmapFactory.decodeResource(getResources(), R.drawable.wheel);
+         /*   Canvas canvas = new Canvas(imageOriginal);
+            Paint paint = new Paint();
+            paint.setColor(Color.BLACK);
+            paint.setTextSize(10);
+            canvas.drawText("EVAN", 1, 1, paint);
+            */
         }
 
         // initialize the matrix only once
@@ -78,6 +87,20 @@ public class SpinWheel extends Activity implements View.OnClickListener{
                     Matrix resize = new Matrix();
                     resize.postScale((float)Math.min(dialerWidth, dialerHeight) / (float)imageOriginal.getWidth(), (float)Math.min(dialerWidth, dialerHeight) / (float)imageOriginal.getHeight());
                     imageScaled = Bitmap.createBitmap(imageOriginal, 0, 0, imageOriginal.getWidth(), imageOriginal.getHeight(), resize, false);
+
+                    Canvas canvas = new Canvas(imageScaled);
+                    Paint paint = new Paint();
+                    paint.setColor(Color.BLACK);
+                    paint.setTextSize(15);
+                    canvas.drawText("EVAN", 161, 108, paint);
+                    canvas.drawText("Roeder", 114, 51, paint);
+                    canvas.drawText("Sabryna", 149, 83, paint);
+                    canvas.drawText("BOB", 180, 108, paint);
+                    canvas.drawText("BOB", 138, 153, paint);
+                    canvas.drawText("BOB", 74, 163, paint);
+                    canvas.drawText("BOB", 43, 128, paint);
+                    canvas.drawText("BOB", 26, 93, paint);
+
 
                     float translateX = dialerWidth / 2 - imageScaled.getWidth() / 2;
                     float translateY = dialerHeight / 2 - imageScaled.getHeight() / 2;
