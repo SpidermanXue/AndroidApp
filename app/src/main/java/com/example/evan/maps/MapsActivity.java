@@ -1,5 +1,6 @@
 package com.example.evan.maps;
 
+import android.content.Intent;
 import android.location.Address;
 import android.location.Criteria;
 import android.location.Geocoder;
@@ -9,6 +10,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -19,8 +21,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements LocationListener {
@@ -33,7 +35,8 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
     private EditText getAddress;
     private EditText search;
     private int PROXIMITY_RADIUS = 5000;
-
+    private List<String> placename = new ArrayList<String>();
+    private Button showbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -149,6 +152,8 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
     }
 
     public void onClick_Search(View v) {
+        showbutton = (Button) findViewById(R.id.mapbutton4);
+        showbutton.setVisibility(View.VISIBLE);
         getAddress = (EditText) findViewById(R.id.address);
         search = (EditText) findViewById(R.id.search_name);
         String strAddress = getAddress.getText().toString();
@@ -191,10 +196,42 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                 toPass[0] = mMap;
                 toPass[1] = googlePlacesUrl.toString();
                 googlePlacesReadTask.execute(toPass);
+
+               // placename = PlacesDisplayTask.placelist;
+               // System.out.println("heihei" + placename);
+
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
         //return p1;
+    }
+
+    public void onClick_Jump(View v){
+        System.out.println("i love melody");
+        Thread timer = new Thread(){ //set up a thread to sleep, do mutiple thing at same time
+            public void run(){
+                try{
+                    sleep(5000); // let splash sleep for 5 seconds
+                }catch(InterruptedException e){
+                    e.printStackTrace(); //print error
+                }finally {
+                    //start and jump to myactivity class
+
+                    try{
+                        Class rclass= Class.forName("com.example.evan.maps.SpinWheel");
+                        Intent ourintent = new Intent(MapsActivity.this, rclass);
+                        //pass a number tp flipperresult
+                        startActivity(ourintent);
+                    }catch(ClassNotFoundException e){
+                        e.printStackTrace();
+
+                    }
+
+                }
+            }
+        };
+        timer.start();//from Thread class, to start our thread
+
     }
 }

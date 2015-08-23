@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -15,6 +15,9 @@ import android.view.View.OnTouchListener;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import java.util.List;
+
 /**
  * Created by Evan on 8/18/15.
  */
@@ -27,7 +30,7 @@ public class SpinWheel extends Activity implements View.OnClickListener{
     private ImageView dialer;
     private int dialerHeight, dialerWidth;
     private boolean buttoncontroller;
-
+    private List<String> searchlist;
     private GestureDetector detector;
 
     private boolean[] quadrantTouched;
@@ -92,11 +95,12 @@ public class SpinWheel extends Activity implements View.OnClickListener{
                     Paint paint = new Paint();
                     paint.setColor(Color.BLACK);
                     paint.setTextSize(15);
-                    canvas.drawText("EVAN", 161, 108, paint);
-                    canvas.drawText("Roeder", 114, 51, paint);
-                    canvas.drawText("Sabryna", 149, 83, paint);
-                    canvas.drawText("BOB", 180, 108, paint);
-                    canvas.drawText("BOB", 138, 153, paint);
+                    searchlist = PlacesDisplayTask.placelist;
+                    canvas.drawText(searchlist.get(0), 161, 108, paint);
+                    canvas.drawText(searchlist.get(1), 114, 51, paint);
+                    canvas.drawText(searchlist.get(2), 149, 83, paint);
+                    canvas.drawText(searchlist.get(3), 180, 108, paint);
+                    canvas.drawText(searchlist.get(4), 138, 153, paint);
                     canvas.drawText("BOB", 74, 163, paint);
                     canvas.drawText("BOB", 43, 128, paint);
                     canvas.drawText("BOB", 26, 93, paint);

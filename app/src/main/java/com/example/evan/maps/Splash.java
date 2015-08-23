@@ -20,17 +20,17 @@ public class Splash extends Activity{
         backsound.start();
 
         Thread timer = new Thread(){ //set up a thread to sleep, do mutiple thing at same time
-          public void run(){
-              try{
-                  sleep(5000); // let splash sleep for 5 seconds
-              }catch(InterruptedException e){
-                  e.printStackTrace(); //print error
-              }finally {
-                  //start and jump to myactivity class
-                  Intent openMyactivity = new Intent("com.example.evan.maps.MENU");
-                  startActivity(openMyactivity);/* start */
-              }
-          }
+            public void run(){
+                try{
+                    sleep(5000); // let splash sleep for 5 seconds
+                }catch(InterruptedException e){
+                    e.printStackTrace(); //print error
+                }finally {
+                    //start and jump to myactivity class
+                    Intent openMyactivity = new Intent("com.example.evan.maps.MENU");
+                    startActivity(openMyactivity);/* start */
+                }
+            }
         };
 
         timer.start();//from Thread class, to start our thread

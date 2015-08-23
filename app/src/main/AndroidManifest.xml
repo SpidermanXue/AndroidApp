@@ -103,6 +103,12 @@
             android:label="@string/title_activity_maps" >
         </activity>
 
+        <activity
+            android:name=".MapChoose"
+            android:label="@string/title_activity_maps" >
+        </activity>
+
+
 
 
     </application>
