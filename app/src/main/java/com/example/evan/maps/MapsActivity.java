@@ -197,9 +197,6 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                 showbutton = (Button) findViewById(R.id.mapbutton4);
                 showbutton.setVisibility(View.VISIBLE);
 
-               // placename = PlacesDisplayTask.placelist;
-               // System.out.println("heihei" + placename);
-
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -212,6 +209,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
         try{
             Class rclass= Class.forName("com.example.evan.maps.SpinWheel");
             Intent ourintent = new Intent(MapsActivity.this, rclass);
+            ourintent.putExtra("caller", "MapsActivity");
             //pass a number tp flipperresult
             startActivity(ourintent);
         }catch(ClassNotFoundException e){

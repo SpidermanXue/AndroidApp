@@ -36,6 +36,7 @@ public class Menu extends ListActivity{
             //when click some item, it will jump to it. If can not find that class, it will stay.
             //same as intent in splash.
             Intent ourIntent = new Intent(Menu.this, ourClass); //start place, destination
+            ourIntent.putExtra("caller", "Menu");
             //same as Intent ourIntent = new Intent("com.example.evan.jianxue" + cheese); ??
             //1.put destination string
             //2.put classname.this, class type  variable better

@@ -23,6 +23,7 @@ import java.util.List;
  */
 public class SpinWheel extends Activity implements View.OnClickListener{
 
+    private String lastactivity;
     private static Bitmap imageOriginal, imageScaled;
     private static Matrix matrix;
 
@@ -39,19 +40,13 @@ public class SpinWheel extends Activity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        lastactivity  = getIntent().getExtras().getString("caller");
 
         setContentView(R.layout.spinwheel);
         // load the image only once
         //tansfer to bitmap and change the imageview
         if (imageOriginal == null) {
-            imageOriginal = BitmapFactory.decodeResource(getResources(), R.drawable.u2);
-         /*   Canvas canvas = new Canvas(imageOriginal);
-            Paint paint = new Paint();
-            paint.setColor(Color.BLACK);
-            paint.setTextSize(10);
-            canvas.drawText("EVAN", 1, 1, paint);
-            */
+            imageOriginal = BitmapFactory.decodeResource(getResources(), R.drawable.wheel);
         }
 
         // initialize the matrix only once
@@ -92,22 +87,39 @@ public class SpinWheel extends Activity implements View.OnClickListener{
                     resize.postScale((float)Math.min(dialerWidth, dialerHeight) / (float)imageOriginal.getWidth(), (float)Math.min(dialerWidth, dialerHeight) / (float)imageOriginal.getHeight());
                     imageScaled = Bitmap.createBitmap(imageOriginal, 0, 0, imageOriginal.getWidth(), imageOriginal.getHeight(), resize, false);
 
-                    if(1==2) {
-                        Canvas canvas = new Canvas(imageScaled);
-                        Paint paint = new Paint();
-                        paint.setColor(Color.BLACK);
-                        paint.setTextSize(15);
+                    Canvas canvas = new Canvas(imageScaled);
+                    Paint paint = new Paint();
+                    paint.setColor(Color.BLACK);
+                    paint.setTextSize(15);
+                    if(lastactivity.equals("MapsActivity")) {
+                        String choice;
                         searchlist = PlacesDisplayTask.placelist;
-                        canvas.drawText(searchlist.get(0), 161, 108, paint);
-                        canvas.drawText(searchlist.get(1), 114, 51, paint);
-                        canvas.drawText(searchlist.get(2), 149, 83, paint);
-                        canvas.drawText(searchlist.get(3), 180, 108, paint);
-                        canvas.drawText(searchlist.get(4), 138, 153, paint);
+                        choice = searchlist.get(0).substring(0,5);
+                        canvas.drawText(choice, 161, 108, paint);
+                        choice = searchlist.get(1).substring(0,5);
+                        canvas.drawText(choice, 114, 51, paint);
+                        choice = searchlist.get(2).substring(0,5);
+                        canvas.drawText(choice, 149, 83, paint);
+                        choice = searchlist.get(3).substring(0,5);
+                        canvas.drawText(choice, 180, 108, paint);
+                        choice = searchlist.get(4).substring(0,5);
+                        canvas.drawText(choice, 138, 153, paint);
                         canvas.drawText("BOB", 74, 163, paint);
                         canvas.drawText("BOB", 43, 128, paint);
                         canvas.drawText("BOB", 26, 93, paint);
                     }
-
+                    canvas.save();
+                    canvas.rotate((float) 20, 74, 163);
+                    canvas.drawText("COC", 61, 186, paint);
+                    canvas.restore();
+                    canvas.save();
+                    canvas.rotate((float) 70, 14, 117);
+                    canvas.drawText("COC", 14, 117, paint);
+                    canvas.restore();
+                    canvas.save();
+                    canvas.rotate((float) 110, 23, 46);
+                    canvas.drawText("COC", 23, 46, paint);
+                    canvas.restore();
                     float translateX = dialerWidth / 2 - imageScaled.getWidth() / 2;
                     float translateY = dialerHeight / 2 - imageScaled.getHeight() / 2;
                     dialer.setImageBitmap(imageScaled);
