@@ -41,7 +41,6 @@ public class SpinWheel extends Activity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         lastactivity  = getIntent().getExtras().getString("caller");
-
         setContentView(R.layout.spinwheel);
         // load the image only once
         //tansfer to bitmap and change the imageview
@@ -108,6 +107,16 @@ public class SpinWheel extends Activity implements View.OnClickListener{
                         canvas.drawText("BOB", 43, 128, paint);
                         canvas.drawText("BOB", 26, 93, paint);
                     }
+                    if(lastactivity.equals("TakeChoice")){
+                        String choice;
+                        searchlist = getIntent().getExtras().getStringArrayList("option");
+                       choice = searchlist.get(0);
+                        canvas.drawText(choice, 161, 108, paint);
+                       // for(int i = 0; i < searchlist.size(); i++){
+
+                       // }
+                    }
+                    /*
                     canvas.save();
                     canvas.rotate((float) 20, 74, 163);
                     canvas.drawText("COC", 61, 186, paint);
@@ -120,6 +129,7 @@ public class SpinWheel extends Activity implements View.OnClickListener{
                     canvas.rotate((float) 110, 23, 46);
                     canvas.drawText("COC", 23, 46, paint);
                     canvas.restore();
+                    */
                     float translateX = dialerWidth / 2 - imageScaled.getWidth() / 2;
                     float translateY = dialerHeight / 2 - imageScaled.getHeight() / 2;
                     dialer.setImageBitmap(imageScaled);

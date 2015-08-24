@@ -13,14 +13,13 @@ import android.widget.Button;
 
 public class FlipperResult extends Activity implements View.OnClickListener{
 
-
    // int result = extras.getInt("result");
     ViewFlipper flipper;
     Button backup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.send);
+        setContentView(R.layout.activity_flipper);
 
         int result = getIntent().getExtras().getInt("result");
         TextView title = (TextView) findViewById(R.id.checkresult);
@@ -32,7 +31,7 @@ public class FlipperResult extends Activity implements View.OnClickListener{
             flipper.setDisplayedChild(2);
         }
         backup =(Button) findViewById(R.id.VFB);
-        backup.setText("Flip Again");
+        backup.setText("FLIP AGAIN");
 
         backup.setOnClickListener(this);
 
@@ -41,7 +40,7 @@ public class FlipperResult extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         try{
-            Class rclass= Class.forName("com.example.evan.maps.Flipper");
+            Class rclass= Class.forName("com.example.evan.maps.FlipperActivity");
             Intent ourintent = new Intent(FlipperResult.this, rclass);
             startActivity(ourintent);
         }catch(ClassNotFoundException e){

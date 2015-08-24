@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="teal_button_normal">#00CC99</color>
+    <color name="teal_button_pressed">#00BE8D</color>
+
+    <color name="teal_text">#00CC99</color>
+
+
+</resources>

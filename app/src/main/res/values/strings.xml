@@ -1,7 +1,36 @@
 <resources>
-    <string name="app_name">JIANXUE</string>
+    <string name="app_name">Mirror Mirror</string>
     <string name="title_activity_maps">maps</string>
     <string name="title">Welcome to CSE 190</string>
     <string name="action_settings">Settings</string>
     <string name="sumbit_button">SUBMIT</string>
+
+
+    <!--Splash Page-->
+
+
+    <!--Home Screen-->
+    <string name="user_question">User\nQuestion</string>
+    <string name="preset_question">Pre-Set\nQuestion</string>
+    <string name="title_activity_home_page">HomePageActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_user_question">UserQuestionActivity</string>
+    <string name="title_activity_preset_question">PresetQuestionActivity</string>
+    <string name="title_activity_yes_or_no">YesOrNoActivity</string>
+
+    <!--Yes Or No Oracle Page-->
+
+    <string name="mirror_on_the_wall">Ask me any question:</string>
+    <string name="hint_yes_or_no">Enter your question</string>
+    <string name="text_placeholder"> </string>
+
+    <!--The Coin Flipper Page-->
+    <string name="button_flipper_flip">FLIP</string>
+    <string name="button_flipper_flipagain">FLIP AGAIN</string>
+    <string name="textview_result_placeholder"> </string>
+    <string name="textview_heads">HEADS!</string>
+    <string name="textview_tails">TAILS!</string>
+
+
 </resources>

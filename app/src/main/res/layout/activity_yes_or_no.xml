@@ -1,0 +1,91 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:background="#FFFFFF"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:weightSum="100"
+    android:orientation="vertical"
+    tools:context="com.example.evan.maps.YesOrNoActivity"
+    android:id="@+id/view_yes_or_no">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="35"
+        android:src="@mipmap/mirror_god"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:id="@+id/imageview_mirror_god_small"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/mirror_on_the_wall"
+        android:textColor="@color/teal_text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:weightSum="10"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="9.5"
+            android:layout_gravity="start|center_horizontal"
+            android:hint="@string/hint_yes_or_no"
+            android:text="@string/text_placeholder"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:inputType="text|textCapSentences"
+            android:id="@+id/edittext_yes_or_no"
+            android:focusable="true"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_green_flat_selector"
+
+            android:text="Enter"
+            android:onClick="displayResult"
+            android:id="@+id/button_yes_or_no_enter"
+            android:layout_gravity="end|center_horizontal" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:text="Thinking..."
+        android:gravity="start"
+        android:id="@+id/textview_yes_or_no_thinking"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="40"
+        android:src = "@drawable/yes"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/imageview_yes_or_no" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="No Question? Get Out!"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:textColor="#FF0000"
+        android:id="@+id/textview_warning"/>
+
+
+</LinearLayout>

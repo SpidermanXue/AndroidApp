@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#ffffff" android:id="@+id/layout0" android:layout_weight="100"
+    android:weightSum="100"
+    android:orientation="vertical"
+    tools:context=".HomePageActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="50"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+
+
+
+        android:src="@mipmap/mirror_snowwhite"
+        android:id="@+id/imageView" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="15"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:src="@drawable/mirrorlogo"
+        android:id="@+id/imageView2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+
+
+        android:id="@+id/layout1"
+        android:weightSum="100">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="@drawable/button_green_flat_selector"
+            android:text="@string/user_question"
+            android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+
+            android:layout_alignParentStart="true"
+            android:id="@+id/button_user_question"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="@drawable/button_green_flat_selector"
+            android:text="@string/preset_question"
+            android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+
+            android:layout_alignParentEnd="true"
+            android:id="@+id/button_preset_question"
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
