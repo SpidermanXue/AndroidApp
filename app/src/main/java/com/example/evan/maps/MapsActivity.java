@@ -152,8 +152,6 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
     }
 
     public void onClick_Search(View v) {
-        showbutton = (Button) findViewById(R.id.mapbutton4);
-        showbutton.setVisibility(View.VISIBLE);
         getAddress = (EditText) findViewById(R.id.address);
         search = (EditText) findViewById(R.id.search_name);
         String strAddress = getAddress.getText().toString();
@@ -196,6 +194,8 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                 toPass[0] = mMap;
                 toPass[1] = googlePlacesUrl.toString();
                 googlePlacesReadTask.execute(toPass);
+                showbutton = (Button) findViewById(R.id.mapbutton4);
+                showbutton.setVisibility(View.VISIBLE);
 
                // placename = PlacesDisplayTask.placelist;
                // System.out.println("heihei" + placename);
@@ -209,29 +209,13 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
 
     public void onClick_Jump(View v){
         System.out.println("i love melody");
-        Thread timer = new Thread(){ //set up a thread to sleep, do mutiple thing at same time
-            public void run(){
-                try{
-                    sleep(5000); // let splash sleep for 5 seconds
-                }catch(InterruptedException e){
-                    e.printStackTrace(); //print error
-                }finally {
-                    //start and jump to myactivity class
-
-                    try{
-                        Class rclass= Class.forName("com.example.evan.maps.SpinWheel");
-                        Intent ourintent = new Intent(MapsActivity.this, rclass);
-                        //pass a number tp flipperresult
-                        startActivity(ourintent);
-                    }catch(ClassNotFoundException e){
-                        e.printStackTrace();
-
-                    }
-
-                }
-            }
-        };
-        timer.start();//from Thread class, to start our thread
-
+        try{
+            Class rclass= Class.forName("com.example.evan.maps.SpinWheel");
+            Intent ourintent = new Intent(MapsActivity.this, rclass);
+            //pass a number tp flipperresult
+            startActivity(ourintent);
+        }catch(ClassNotFoundException e){
+            e.printStackTrace();
+        }
     }
 }

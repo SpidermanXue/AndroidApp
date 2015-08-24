@@ -63,15 +63,6 @@ public class PlacesDisplayTask extends AsyncTask<Object, Integer, List<HashMap<S
             googleMap.addMarker(new MarkerOptions().position(latLng).title(placeName));
             //googleMap.addMarker(markerOptions);
         }
-            jumpPage();
-    }
-
-    private void jumpPage(){
-        System.out.println(placelist);
-        System.out.println(placelist.get(0));
-        Http http = new Http();
-        MapsActivity transfer = new MapsActivity();
-       // transfer.jumpActivity();
     }
 }
 
