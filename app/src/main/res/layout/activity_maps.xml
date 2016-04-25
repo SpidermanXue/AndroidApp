@@ -10,62 +10,64 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/address"
+            android:id="@+id/search_name"
+            android:drawableStart="@drawable/ic_search"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity= "center"
-            android:hint="Enter Address" />
+            android:hint="@string/edittext_hint2"
+            android:singleLine="true"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/search_name"
+            android:id="@+id/address"
+            android:drawableStart="@drawable/ic_location"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity= "center"
-            android:hint="Enter Your Search" />
-
+            android:hint="@string/edittext_hint1"
+            android:singleLine="true"/>
 
     </LinearLayout>
-    <Button
-        android:id="@+id/mapbutton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentRight="true"
-        android:onClick="onClick_Search"
-        android:text="Search"
-        android:layout_below="@+id/doubleedit"
-        />
+    <View
+        android:id="@+id/centerShim"
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"/>
+
     <Button
         android:id="@+id/mapbutton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="false"
-        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_green_flat_selector"
         android:onClick="onClick_Jump"
-        android:layout_below="@+id/doubleedit"
-        android:text="Go To PinWheel"
-        android:visibility="invisible"/>
-    <Button
-        android:id="@+id/mapbutton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="false"
+        android:textSize="14sp"
+        android:text="Let Us Choose"
         android:layout_alignParentLeft="true"
-        android:onClick="onClick_Mylocation"
+        android:visibility="invisible"
         android:layout_below="@+id/doubleedit"
-        android:text="MyLocation"/>
+        android:layout_toLeftOf="@+id/centerShim"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
     <Button
-        android:id="@+id/mapbutton2"
+        android:id="@+id/mapbutton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentLeft="false"
-        android:onClick="onClick_search"
-        android:layout_below="@+id/mapbutton3"
-        android:text="MyLocation"
-        android:visibility="invisible"/>
+        android:background="@drawable/button_green_flat_selector"
+        android:layout_alignParentRight="true"
+        android:onClick="onClick_Search"
+        android:textSize="14sp"
+        android:text="Search"
+        android:layout_below="@+id/doubleedit"
+        android:layout_above="@+id/map"
+        android:layout_toRightOf="@+id/centerShim"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
+
 
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"

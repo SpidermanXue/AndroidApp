@@ -27,7 +27,8 @@
 
         <activity
             android:name=".Splash"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@style/SplashPageTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <!--becasue i am running .splash first. so it is my MAIN-->
@@ -38,7 +39,8 @@
 
         <activity
             android:name=".HomePageActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@style/SplashPageTheme">
             <intent-filter>
                 <action android:name="com.example.evan.maps.HomePageActivity" /> <!-- intent -->
                 <!-- not main, so need to find CLASS from the package-->
@@ -47,91 +49,65 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".Menu"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="com.example.evan.maps.MENU" /> <!-- intent -->
-                <!-- not main, so need to find CLASS from the package-->
-                <category android:name="android.intent.category.DEFAULT" />
-                <!-- change Launcher to default, so it will launch .MyActivity when we want.-->
-            </intent-filter>
-        </activity>
-
         <!-- called by other page, so no action -->
         <!-- name is class name -->
-        <activity
-            android:name=".TextPlay"
-            android:label="@string/app_name">
-        </activity>
-
-        <activity
-            android:name=".Email"
-            android:label="@string/app_name">
-        </activity>
-
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" >
-        </activity>
-
-        <activity
-            android:name=".Flipper"
-            android:label="@string/title_activity_maps" >
-        </activity>
-
-        <activity
-            android:name=".FlipperResult"
-            android:label="@string/title_activity_maps" >
-        </activity>
-
-        <activity
-            android:name=".SpinWheel"
-            android:label="@string/title_activity_maps" >
-        </activity>
-
-        <activity
-            android:name=".SpinChoice"
-            android:label="@string/title_activity_maps" >
-        </activity>
-
-        <activity
-            android:name=".BigWheel"
-            android:label="@string/title_activity_maps" >
-        </activity>
-
-        <activity
-            android:name=".MapChoose"
-            android:label="@string/title_activity_maps" >
-        </activity>
 
         <activity
             android:name=".UserQuestionActivity"
             android:label="@string/title_activity_user_question"
             android:parentActivityName=".HomePageActivity"
-            android:theme="@style/Theme.AppCompat.Light" >
+            android:theme="@style/AppTheme2" >
+        </activity>
+
+        <activity
+            android:name=".YesOrNoActivity"
+            android:label="@string/title_activity_yes_or_no"
+            android:parentActivityName=".UserQuestionActivity"
+            android:theme="@style/AppTheme2">
+        </activity>
+
+        <activity
+            android:name=".FlipperActivity"
+            android:label="@string/title_activity_flipper_result"
+            android:parentActivityName=".UserQuestionActivity"
+            android:theme="@style/AppTheme2">
+        </activity>
+
+        <activity
+            android:name=".TakeChoice"
+            android:label="@string/title_activity_spin_the_apple_pie"
+            android:parentActivityName=".UserQuestionActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/AppTheme2">
+        </activity>
+
+        <activity
+            android:name=".SpinWheel"
+            android:label="@string/title_activity_spin_wheel"
+            android:parentActivityName=".TakeChoice"
+            android:theme="@style/AppTheme2">
         </activity>
 
         <activity
             android:name=".PresetQuestionActivity"
             android:label="@string/title_activity_preset_question"
+            android:theme="@style/AppTheme2"
             android:parentActivityName=".HomePageActivity" >
         </activity>
+
         <activity
-            android:name=".YesOrNoActivity"
-            android:label="@string/title_activity_yes_or_no"
-            >
-        </activity>
-        <activity
-            android:name=".FlipperActivity"
-            android:label="@string/title_activity_maps" >
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_map"
+            android:parentActivityName=".PresetQuestionActivity"
+            android:theme="@style/AppTheme2">
         </activity>
 
         <activity
-            android:name=".TakeChoice"
-            android:label="@string/title_activity_maps" >
+            android:name=".PlaceList"
+            android:label="@string/title_activity_place_list"
+            android:parentActivityName=".MapsActivity"
+            android:theme="@style/AppTheme2">
         </activity>
-
 
 
     </application>

@@ -1,138 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     android:weightSum="100">
 
-    <ScrollView
-        android:layout_weight="30"
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="25"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="192dp"
+            android:src="@mipmap/mirror_god"
+            android:id="@+id/imageview_takechoice_mirror_god"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="@string/textview_mirror_said"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/imageview_takechoice_mirror_god"
+            android:id="@+id/textview_takechoice_mirror"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textSize="15sp"
+            android:layout_toEndOf="@+id/imageview_takechoice_mirror_god"
+            android:layout_below="@+id/textview_takechoice_mirror"
+            android:text="@string/textview_mirror_said_content"
+            android:id="@+id/textview_takechoice_mirror_words"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+
+        android:layout_weight="47"
         android:id="@+id/scrollView">
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+<!--            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="option1"
                 android:id="@+id/textView1"
                 android:layout_gravity="left"
-                />
+                />-->
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Enter Option A"
                 android:id="@+id/editText1"
+                android:singleLine="true"
                 />
-            <TextView
+<!--            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="option2"
                 android:id="@+id/textView2"
                 android:layout_gravity="left"
-                />
+                />-->
 
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Enter Option B"
                 android:id="@+id/editText2"
                 android:layout_gravity="center_vertical"
+                android:singleLine="true"
                 />
-            <TextView
+<!--            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="option3"
                 android:id="@+id/textView3"
                 android:layout_gravity="left"
-                />
+                />-->
 
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Enter Option C"
                 android:id="@+id/editText3"
                 android:layout_gravity="center_vertical"
+                android:singleLine="true"
                 />
-            <TextView
+<!--            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="option4"
                 android:id="@+id/textView4"
-                android:layout_gravity="left"
-                />
+                android:layout_gravity="left"/>-->
 
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Enter Option D"
                 android:id="@+id/editText4"
+                android:singleLine="true"
                 />
-            <TextView
+<!--            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="option5"
                 android:id="@+id/textView5"
-                android:layout_gravity="left" />
+                android:layout_gravity="left" />-->
 
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText5" />
-            <TextView
+                android:hint="Enter Option E"
+                android:id="@+id/editText5"
+                android:singleLine="true"/>
+
+<!--            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="option6"
                 android:id="@+id/textView6"
-                android:layout_gravity="left" />
+                android:layout_gravity="left" />-->
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText6" />
+                android:hint="Enter Option F"
+                android:id="@+id/editText6"
+                android:singleLine="true"/>
 
-            <TextView
+<!--            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="option6"
+                android:text="option7"
                 android:id="@+id/textView7"
-                android:layout_gravity="left" />
+                android:layout_gravity="left" />-->
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText7" />
+                android:hint="Enter Option G"
+                android:id="@+id/editText7"
+                android:singleLine="true"/>
 
-            <TextView
+<!--            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="option6"
+                android:text="option8"
                 android:id="@+id/textView8"
-                android:layout_gravity="left" />
+                android:layout_gravity="left" />-->
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText8" />
+                android:hint="Enter Option H"
+                android:id="@+id/editText8"
+                android:singleLine="true"/>
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="40">
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SUMBIT"
-            android:id="@+id/buttonchoice" />
-    </LinearLayout>
 
-    <LinearLayout
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/button_green_flat_selector"
+        android:text="SPIN"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/buttonchoice" />
+
+
+<!--    <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
@@ -142,6 +204,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/analogClock"
             android:layout_gravity="center_horizontal" />
-    </LinearLayout>
+    </LinearLayout>-->
 
 </LinearLayout>

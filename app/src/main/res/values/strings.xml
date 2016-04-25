@@ -15,9 +15,21 @@
     <string name="title_activity_home_page">HomePageActivity</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_user_question">UserQuestionActivity</string>
-    <string name="title_activity_preset_question">PresetQuestionActivity</string>
-    <string name="title_activity_yes_or_no">YesOrNoActivity</string>
+    <string name="title_activity_user_question">User Question</string>
+    <string name="title_activity_preset_question">Pre-set Question</string>
+    <string name="title_activity_yes_or_no">Yes Or No Oracle</string>
+    <string name="title_activity_flipper_result">The Coin Flipper</string>
+    <string name="title_activity_spin_the_apple_pie">Enter Apple Pie Slice</string>
+    <string name="title_activity_spin_wheel">Spin The Apple Pie</string>
+    <string name="title_activity_map">Search Nearby</string>
+    <string name="title_activity_place_list">Options</string>
+
+    <!--User Question Page-->
+    <string name="button_yes_or_no_oracle">Yes Or No Oracle</string>
+    <string name="button_the_coin_flipper">The Coin Flipper</string>
+    <string name="button_spin_the_apple_pie">Spin The Apple Pie</string>
+    <string name="textview_what_to_ask">Mirror: So what brings you here?</string>
+    <string name="content_mirror_god">Mirror God</string>
 
     <!--Yes Or No Oracle Page-->
 
@@ -31,6 +43,24 @@
     <string name="textview_result_placeholder"> </string>
     <string name="textview_heads">HEADS!</string>
     <string name="textview_tails">TAILS!</string>
+
+    <!--The Take Choice Page-->
+    <string name="textview_mirror_said">Mirror:</string>
+    <string name="textview_mirror_said_content">Enter two or more options to spin the magical Apple Pie Wheel.</string>
+    <string name="textview_option_a">Enter Option A</string>
+    <string name="textview_option_b">Enter Option B</string>
+    <string name="textview_option_c">Enter Option C</string>
+    <string name="textview_option_d">Enter Option D</string>
+    <string name="textview_option_e">Enter Option E</string>
+    <string name="textview_option_f">Enter Option F</string>
+    <string name="textview_option_g">Enter Option G</string>
+    <string name="textview_option_h">Enter Option H</string>
+
+    <!--The map hint -->
+    <string name="edittext_hint1"><font size="10">address or zip code (default is current location)</font></string>
+    <string name="edittext_hint2"><font size="10">e.g. food, restaurant</font></string>
+
+
 
 
 </resources>

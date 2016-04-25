@@ -13,7 +13,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,24 +43,22 @@ public class PlacesDisplayTask extends AsyncTask<Object, Integer, List<HashMap<S
 
     @Override
     protected void onPostExecute(List<HashMap<String, String>> list) {
-        placelist = new ArrayList<String>();
-        System.out.println("jump page 8");
-        System.out.println(list.get(0));
-        System.out.println(list.size());
-        googleMap.clear();
-        for (int i = 0; i < list.size(); i++) {
-            MarkerOptions markerOptions = new MarkerOptions();
-            HashMap<String, String> googlePlace = list.get(i);
-            double lat = Double.parseDouble(googlePlace.get("lat"));
-            double lng = Double.parseDouble(googlePlace.get("lng"));
-            String placeName = googlePlace.get("place_name" );
-            placelist.add(placeName);
-            String vicinity = googlePlace.get("vicinity");
-            LatLng latLng = new LatLng(lat, lng);
-            markerOptions.position(latLng);
-            markerOptions.title(placeName + " : " + vicinity);
-            googleMap.addMarker(new MarkerOptions().position(latLng).title(placeName));
-            //googleMap.addMarker(markerOptions);
+        placelist = new ArrayList<String>(); //empty the string list
+        System.out.println("jump page 8" + list);
+        if(!list.isEmpty()){
+            for (int i = 0; i < list.size(); i++) {
+                MarkerOptions markerOptions = new MarkerOptions();
+                HashMap<String, String> googlePlace = list.get(i);
+                double lat = Double.parseDouble(googlePlace.get("lat"));
+                double lng = Double.parseDouble(googlePlace.get("lng"));
+                String placeName = googlePlace.get("place_name");
+                placelist.add(placeName);
+                String vicinity = googlePlace.get("vicinity");
+                LatLng latLng = new LatLng(lat, lng);
+                markerOptions.position(latLng);
+                markerOptions.title(placeName + " : " + vicinity);
+                googleMap.addMarker(new MarkerOptions().position(latLng).title(placeName));
+            }
         }
     }
 }

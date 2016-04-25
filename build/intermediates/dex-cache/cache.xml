@@ -2,193 +2,186 @@
 <items version="2" >
 
     <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-83b8368e5b1d2c420e7eec1cb50474119af8aaf3.jar" />
-    </item>
-    <item
         jar="/Users/Evan/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
         jumboMode="false"
         revision="23.0.0 rc3"
         sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-3f48023045e57b78698d8ee85d7a4d3eea060946.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-41e17e801ec1e9915a04f2e3c33e4c07e5e2a34a.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-ac8f489dd09f241e1016bb1549bd6a57a235dc63.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/libs/internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-3ec7114007aad08d78e293851ad1c5eecf489113.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-3407aed80bc60f1669bf3dbcbacb847c4d2ff85d.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-6d1de4f6d3001bcc1d484faa87bd377bf7348ad4.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-7382673bb8e0c473a172676dc210578cc388c8fb.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-31919dc59c326933dc94cc8f8491dbacbb64d40e.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-bc444249861f1976f05edf404130e465dd101672.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-d86844609478408ff3235b909093bd84721c8a6b.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-4c7c200ec8c42c9b919ed51ceb2600f57a052990.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-37a3d30f053438d415d352ac215c1c214afb11a2.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-a528793e83076e8f36be1ed8e8bcb466e23c2fa8.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="a78183f30e769a98ab4820794f597763088d3065">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-c74435bbd550049fae68a7fd9c755c39aaeab2d3.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/libs/wheel-menu-library.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="b74cc31b191ca8420b9b8b20ce90952ee6ee606c">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/wheel-menu-library-327da903b128bb989ea2f917403501b98a2ebba5.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-162c3b0f9714359a5053493d045de10c32337c0f.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-d9c2b063f819f44ac244651374bc0fbb4a5e3e62.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-7cdd5aae7497c272d4a6326377c0ee26b1ace3e7.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-ca5e09fc9f31484b379a5fdcf48acb4c78318677.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-444e29441378203f9c886e73a1b6cb1a489b7484.jar" />
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/support-annotations-22.2.1-3f48023045e57b78698d8ee85d7a4d3eea060946.jar" />
     </item>
     <item
         jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0 rc3"
         sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-5e97b2c8159f3d9593037c672418a720d01fb4f4.jar" />
-    </item>
-    <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-89b9ea570f27f4288cbbf81b54f094947ebd8057.jar" />
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-5e97b2c8159f3d9593037c672418a720d01fb4f4.jar" />
     </item>
     <item
         jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
         jumboMode="false"
         revision="23.0.0 rc3"
         sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-a004d9b5f5270ed33bec90f6efb36f24b74245a2.jar" />
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/internal_impl-22.2.1-a004d9b5f5270ed33bec90f6efb36f24b74245a2.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-3407aed80bc60f1669bf3dbcbacb847c4d2ff85d.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-31919dc59c326933dc94cc8f8491dbacbb64d40e.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/internal_impl-22.0.0-3ec7114007aad08d78e293851ad1c5eecf489113.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-7382673bb8e0c473a172676dc210578cc388c8fb.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-4c7c200ec8c42c9b919ed51ceb2600f57a052990.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-d86844609478408ff3235b909093bd84721c8a6b.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-6d1de4f6d3001bcc1d484faa87bd377bf7348ad4.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-83b8368e5b1d2c420e7eec1cb50474119af8aaf3.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-bc444249861f1976f05edf404130e465dd101672.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-a528793e83076e8f36be1ed8e8bcb466e23c2fa8.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-c74435bbd550049fae68a7fd9c755c39aaeab2d3.jar" />
     </item>
     <item
         jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0 rc3"
         sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-a6e1463c92d04404eaf28c13bd62b1c9e32928e5.jar" />
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-a6e1463c92d04404eaf28c13bd62b1c9e32928e5.jar" />
     </item>
     <item
-        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.5.0/jars/classes.jar"
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0 rc3"
-        sha1="d405025c600055237c171a0bbabaa49d69696573">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-72f3e25a0978f417dd943f82bac1b893e729e12f.jar" />
+        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-ca5e09fc9f31484b379a5fdcf48acb4c78318677.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-37a3d30f053438d415d352ac215c1c214afb11a2.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-7cdd5aae7497c272d4a6326377c0ee26b1ace3e7.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-d9c2b063f819f44ac244651374bc0fbb4a5e3e62.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-162c3b0f9714359a5053493d045de10c32337c0f.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-89b9ea570f27f4288cbbf81b54f094947ebd8057.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-444e29441378203f9c886e73a1b6cb1a489b7484.jar" />
     </item>
     <item
         jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0 rc3"
         sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
-        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/debug/classes-a235f1b790d1eec9383dca5b9c0c95a0a0fb5341.jar" />
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-a235f1b790d1eec9383dca5b9c0c95a0a0fb5341.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-41e17e801ec1e9915a04f2e3c33e4c07e5e2a34a.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-ac8f489dd09f241e1016bb1549bd6a57a235dc63.jar" />
+    </item>
+    <item
+        jar="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="d405025c600055237c171a0bbabaa49d69696573">
+        <dex dex="/Users/Evan/Documents/AndroidStudioProjects/CSE190_Project/app/build/intermediates/pre-dexed/release/classes-72f3e25a0978f417dd943f82bac1b893e729e12f.jar" />
     </item>
 
 </items>

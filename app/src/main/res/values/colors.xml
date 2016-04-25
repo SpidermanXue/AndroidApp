@@ -5,5 +5,8 @@
 
     <color name="teal_text">#00CC99</color>
 
+    <color name="teal_round_button_pressed">#00916D</color>
+
+    <color name="teal_action_bar">#af00cc99</color>
 
 </resources>

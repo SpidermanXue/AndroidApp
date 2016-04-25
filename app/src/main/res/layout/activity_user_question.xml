@@ -5,73 +5,83 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:weightSum="100"
-    tools:context="com.example.evan.maps.UserQuestionActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.example.evan.maps.UserQuestionActivity" >
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-
         android:layout_weight="35"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="10dp"
         android:src="@mipmap/mirror_god"
         android:id="@+id/imageView_mirror_god"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity= "center"
-        />
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:contentDescription="@string/content_mirror_god" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/textview_what_to_ask"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:id="@+id/textview_user_question" />
+
+    <Button
+        android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="45"
+        android:layout_weight="15"
+        android:layout_marginBottom="15dp"
 
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:orientation="vertical">
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/button_green_flat_selector"
+        android:text="@string/button_yes_or_no_oracle"
+        android:textColor="@android:color/black"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/button_yes_or_no_oracle" />
 
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/button_green_flat_selector"
-            android:text="Yes Or No Oracle"
-            android:textColor="@android:color/black"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:id="@+id/button_yes_or_no_oracle" />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15"
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
 
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
+        android:background="@drawable/button_green_flat_selector"
+        android:text="@string/button_the_coin_flipper"
+        android:textColor="@android:color/black"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
 
-            android:background="@drawable/button_green_flat_selector"
-            android:text="The Coin Flipper"
-            android:textColor="@android:color/black"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:id="@+id/button_the_coin_flipper" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/button_the_coin_flipper" />
 
-            android:layout_marginTop="5dp"
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15"
 
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
 
-            android:background="@drawable/button_green_flat_selector"
-            android:text="Spin the Apple Pie"
-            android:textColor="@android:color/black"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:id="@+id/button_spin_the_apple_pie"/>
-
-    </LinearLayout>
+        android:background="@drawable/button_green_flat_selector"
+        android:text="@string/button_spin_the_apple_pie"
+        android:textColor="@android:color/black"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/button_spin_the_apple_pie"/>
 
 </LinearLayout>

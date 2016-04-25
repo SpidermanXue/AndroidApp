@@ -1,5 +1,6 @@
 package com.example.evan.maps;
 
+import android.content.Context;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Criteria;
@@ -9,7 +10,10 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -22,26 +26,35 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements LocationListener {
+public class MapsActivity extends FragmentActivity implements LocationListener, View.OnKeyListener {
 
     private static final String GOOGLE_API_KEY = "AIzaSyBj4eNM5-fJgcTHdtuoAu4b_RzNawxo4lQ";
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
-    private final LatLng LOCATION_BURNABY = new LatLng(49.27645, -122.917587);
-    private final LatLng LOCATION_SURREY = new LatLng(49.27645, -122.847587);
-    private final LatLng LOCATION_CITY = new LatLng(49.27645, -122.407587); //zuobiao
     private EditText getAddress;
     private EditText search;
+    private Button start;
     private int PROXIMITY_RADIUS = 5000;
-    private List<String> placename = new ArrayList<String>();
     private Button showbutton;
+    LatLng p1 = null;
+    double latitude;
+    double longitude;
+    private TextView locationTv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+        getAddress = (EditText) findViewById(R.id.address);
+        search = (EditText) findViewById(R.id.search_name);
+        start = (Button) findViewById(R.id.mapbutton1);
+        locationTv = (TextView) findViewById(R.id.latlongLocation);
+
+
+        getAddress.setOnKeyListener(this);
+        search.setOnKeyListener(this);
         setUpMapIfNeeded();
+        onClick_Mylocation();
     }
 
     @Override
@@ -107,82 +120,74 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
 
     @Override
     public void onLocationChanged(Location location) {
-        TextView locationTv = (TextView) findViewById(R.id.latlongLocation);
+        locationTv = (TextView) findViewById(R.id.latlongLocation);
         double latitude = location.getLatitude();
         double longitude = location.getLongitude();
         LatLng latLng = new LatLng(latitude, longitude);
-        mMap.addMarker(new MarkerOptions().position(latLng));
+      //  mMap.addMarker(new MarkerOptions().position(latLng).title("MyLocation"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
         locationTv.setText("Latitude:" + latitude + ", Longitude:" + longitude);
     }
 
-    public void onClick_Mylocation(View v) {
-        //  CameraUpdate update = CameraUpdateFactory.newLatLng(LOCATION_CITY);
-        // mMap.setMapType((GoogleMap.MAP_TYPE_SATELLITE));
-        // CameraUpdate update = CameraUpdateFactory.newLatLngZoom(LOCATION_CITY, 14);
-        // mMap.addMarker(new MarkerOptions().position(LOCATION_CITY).title("EVAN!!!"));
-        // mMap.animateCamera(update);
+    public void onClick_Mylocation() {
+        mMap.clear();
         mMap.setMyLocationEnabled(true);
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         Criteria criteria = new Criteria();
         String bestProvider = locationManager.getBestProvider(criteria, true);
-        System.out.println(bestProvider);
         Location location = locationManager.getLastKnownLocation(bestProvider);
         if (location != null) {
-            System.out.println("EVAN SMART");
             onLocationChanged(location);
         }
-        System.out.println("MELODY");
-        locationManager.requestLocationUpdates(bestProvider, 20000, 0, this);
-    }
-
-    public void onClick_Burnaby(View v) {
-        // CameraUpdate update = CameraUpdateFactory.newLatLng(LOCATION_BURNABY);
-        mMap.setMapType((GoogleMap.MAP_TYPE_TERRAIN));
-        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(LOCATION_BURNABY, 14);
-        mMap.animateCamera(update);
-    }
-
-    public void onClick_Surrey(View v) {
-        // CameraUpdate update = CameraUpdateFactory.newLatLng(LOCATION_SURREY);
-        mMap.setMapType((GoogleMap.MAP_TYPE_SATELLITE));
-        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(LOCATION_SURREY, 16);
-        mMap.animateCamera(update);
+       // locationManager.requestLocationUpdates(bestProvider, 20000, 0, this);
     }
 
     public void onClick_Search(View v) {
-        getAddress = (EditText) findViewById(R.id.address);
-        search = (EditText) findViewById(R.id.search_name);
-        String strAddress = getAddress.getText().toString();
-        String search_name = search.getText().toString();
-        Geocoder coder = new Geocoder(this);
-        List<Address> address;
-        LatLng p1 = null;
-
-        System.out.println("Start!!!!");
-        try {
-            address = coder.getFromLocationName(strAddress, 5);
-            if (address == null) {
-                //return null;
-                System.out.println("can not find");
+        mMap.clear();
+        String strAddress = getAddress.getText().toString().toLowerCase();
+        String search_name0 = search.getText().toString().toLowerCase();
+        String search_name = search_name0.replaceAll(" ", "_");
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(search.getWindowToken(), 0);
+        if(strAddress.equals("")){
+            //set local
+            mMap.setMyLocationEnabled(true);
+            LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+            Criteria criteria = new Criteria();
+            String bestProvider = locationManager.getBestProvider(criteria, true);
+            Location location = locationManager.getLastKnownLocation(bestProvider);
+            latitude = location.getLatitude();
+            longitude = location.getLongitude();
+        }else {
+             try {
+                Geocoder coder = new Geocoder(this);
+                List<Address> address;
+                address = coder.getFromLocationName(strAddress, 5);
+                if(address.isEmpty()){
+                    mMap.setMyLocationEnabled(true);
+                    LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+                    Criteria criteria = new Criteria();
+                    String bestProvider = locationManager.getBestProvider(criteria, true);
+                    Location location = locationManager.getLastKnownLocation(bestProvider);
+                    latitude = location.getLatitude();
+                    longitude = location.getLongitude();
+                }else {
+                    Address location = address.get(0);
+                    latitude = location.getLatitude();
+                    longitude = location.getLongitude();
+                }
+                }catch (IOException e) {
+                e.printStackTrace();
+                }
             }
-            Address location = address.get(0);
-            double latitude = location.getLatitude();
-            double longitude = location.getLongitude();
-
-            System.out.println(location.getLatitude());
-
-            p1 = new LatLng(location.getLatitude(), location.getLongitude());
-
+            p1 = new LatLng(latitude, longitude);
             mMap.setMapType((GoogleMap.MAP_TYPE_NORMAL));
             CameraUpdate update = CameraUpdateFactory.newLatLngZoom(p1, 12);
-            mMap.addMarker(new MarkerOptions().position(p1).title("myhome"));
+            mMap.addMarker(new MarkerOptions().position(p1).title("MyLocation"));
             mMap.animateCamera(update);
             if(!search_name.matches("")) {
-                System.out.println("searching place");
                 StringBuilder googlePlacesUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
-                //https://maps.googleapis.com/maps/api/geocode/json?address=1
                 googlePlacesUrl.append("location=" + latitude + "," + longitude);
                 googlePlacesUrl.append("&radius=" + PROXIMITY_RADIUS);
                 googlePlacesUrl.append("&types=" + search_name);
@@ -196,24 +201,64 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                 googlePlacesReadTask.execute(toPass);
                 showbutton = (Button) findViewById(R.id.mapbutton4);
                 showbutton.setVisibility(View.VISIBLE);
+                locationTv.setText("Latitude:" + latitude + ", Longitude:" + longitude);
+
 
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        //return p1;
     }
 
     public void onClick_Jump(View v){
-        System.out.println("i love melody");
-        try{
-            Class rclass= Class.forName("com.example.evan.maps.SpinWheel");
-            Intent ourintent = new Intent(MapsActivity.this, rclass);
-            ourintent.putExtra("caller", "MapsActivity");
-            //pass a number tp flipperresult
-            startActivity(ourintent);
-        }catch(ClassNotFoundException e){
-            e.printStackTrace();
+        if(PlacesDisplayTask.placelist.size() >= 1) {
+            try {
+                Class rclass = Class.forName("com.example.evan.maps.PlaceList");
+                Intent ourintent = new Intent(MapsActivity.this, rclass);
+                startActivity(ourintent);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present. Inject xml to java code to nevigation bar
+        getMenuInflater().inflate(R.menu.menu_user_question, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onKey(View v, int keyCode, KeyEvent event) {
+        //filter for second call
+        if (event.getAction()!=KeyEvent.ACTION_DOWN)
+            return true;
+        if(keyCode == 66) {
+            int id = v.getId();
+            switch(id){
+                case R.id.address:
+                    search.requestFocus();
+                    break;
+                case R.id.search_name:
+                    InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(search.getWindowToken(), 0);
+                    start.performClick();
+                    break;
+            }
+        }
+        return false;
     }
 }

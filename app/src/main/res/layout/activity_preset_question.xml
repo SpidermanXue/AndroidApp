@@ -9,59 +9,61 @@
     android:orientation="vertical"
     tools:context="com.example.evan.maps.PresetQuestionActivity">
 
-
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="35"
         android:layout_marginTop="25dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="20dp"
         android:src="@mipmap/mirror_snowwhite"
-        android:layout_gravity="center_vertical"
+        android:layout_gravity="center"
         android:gravity="center"
         android:id="@+id/imageView_preset_mirror_snowwhite" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="10"
+        android:layout_weight="15"
         android:background="@drawable/button_green_flat_selector"
         android:text="Looking Nearby"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:gravity="center"
-        android:id="@+id/button_preset_looking_nearby"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
-        android:onClick="onClick_Nearby"/>
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="15dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:onClick="onClick_Nearby"
+        android:id="@+id/button_preset_looking_nearby" />
     <Button
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="10"
+        android:layout_weight="15"
         android:background="@drawable/button_green_flat_selector"
-        android:text="Just For Fun"
+        android:text="COMING SOON"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:gravity="center"
-        android:id="@+id/button_preset_just_for_fun"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="20dp" />
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10"
-        android:background="@drawable/button_green_flat_selector"
-        android:text="Want chipotle?"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:id="@+id/button_preset_want_chipotle"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="15dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
 
+        android:id="@+id/button_preset_just_for_fun"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15"
+        android:background="@drawable/button_green_flat_selector"
+        android:text="COMING SOON"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="15dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+
+        android:id="@+id/button_preset_want_chipotle" />
 
 </LinearLayout>

@@ -1,14 +1,13 @@
 package com.example.evan.maps;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class UserQuestionActivity extends AppCompatActivity {
+public class UserQuestionActivity extends Activity {
 
     Button yesOrNo;
     Button coinFlipper;
@@ -61,11 +60,12 @@ public class UserQuestionActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present. Inject xml to java code to nevigation bar
         getMenuInflater().inflate(R.menu.menu_user_question, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -74,6 +74,36 @@ public class UserQuestionActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        switch(id){
+            case R.id.userquetion:
+                try{
+                    Class rclass= Class.forName("com.example.evan.maps.UserQuestionActivity");
+                    Intent ourintent = new Intent(UserQuestionActivity.this, rclass);
+                    startActivity(ourintent);
+                }catch(ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                return true;
+
+            case R.id.presetquestion:
+                try{
+                    Class rclass= Class.forName("com.example.evan.maps.PresetQuestionActivity");
+                    Intent ourintent = new Intent(UserQuestionActivity.this, rclass);
+                    startActivity(ourintent);
+                }catch(ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                return true;
+            case R.id.homepage:
+                try{
+                    Class rclass= Class.forName("com.example.evan.maps.HomePageActivity");
+                    Intent ourintent = new Intent(UserQuestionActivity.this, rclass);
+                    startActivity(ourintent);
+                }catch(ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                return true;
+        }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;

@@ -1,20 +1,20 @@
 package com.example.evan.maps;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Matrix;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.GestureDetector;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -27,6 +27,7 @@ public class SpinWheel extends Activity implements View.OnClickListener{
     private static Bitmap imageOriginal, imageScaled;
     private static Matrix matrix;
 
+    private TextView resultoption;
     private Button button;
     private ImageView dialer;
     private int dialerHeight, dialerWidth;
@@ -37,15 +38,55 @@ public class SpinWheel extends Activity implements View.OnClickListener{
     private boolean[] quadrantTouched;
     private boolean allowRotating;
 
+    private int divCount;
+    private int divAngle;
+    private double totalRotation;
+    private int top;
+    private String selectedPosition;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        divCount = 0;
         super.onCreate(savedInstanceState);
         lastactivity  = getIntent().getExtras().getString("caller");
         setContentView(R.layout.spinwheel);
         // load the image only once
         //tansfer to bitmap and change the imageview
         if (imageOriginal == null) {
-            imageOriginal = BitmapFactory.decodeResource(getResources(), R.drawable.wheel);
+            if(lastactivity.equals("MapsActivity")) {
+                searchlist = getIntent().getExtras().getStringArrayList("option");
+            }else{
+                searchlist = getIntent().getExtras().getStringArrayList("option");
+            }
+            divCount = searchlist.size();
+            setDivCount(divCount);
+
+                switch(divCount){
+                    case 2:
+                        imageOriginal = BitmapFactory.decodeResource(getResources(), R.drawable.two);
+                        break;
+                    case 3:
+                        imageOriginal = BitmapFactory.decodeResource(getResources(), R.drawable.three);
+                        break;
+                    case 4:
+                        imageOriginal = BitmapFactory.decodeResource(getResources(), R.drawable.four);
+                        break;
+                    case 5:
+                        imageOriginal = BitmapFactory.decodeResource(getResources(), R.drawable.five);
+                        break;
+                    case 6:
+                        imageOriginal = BitmapFactory.decodeResource(getResources(), R.drawable.six);
+                        break;
+                    case 7:
+                        imageOriginal = BitmapFactory.decodeResource(getResources(), R.drawable.seven);
+                        break;
+                    case 8:
+                        imageOriginal = BitmapFactory.decodeResource(getResources(), R.drawable.eight);
+                        break;
+                    default:
+                        imageOriginal = BitmapFactory.decodeResource(getResources(), R.drawable.eight);
+                        break;
+                }
         }
 
         // initialize the matrix only once
@@ -66,6 +107,8 @@ public class SpinWheel extends Activity implements View.OnClickListener{
 
         dialer = (ImageView) findViewById(R.id.imageView_ring);
 
+        resultoption = (TextView) findViewById(R.id.selected_position);
+
         button = (Button) findViewById(R.id.wlbutton);
 
         button.setOnClickListener(this);
@@ -85,51 +128,8 @@ public class SpinWheel extends Activity implements View.OnClickListener{
                     Matrix resize = new Matrix();
                     resize.postScale((float)Math.min(dialerWidth, dialerHeight) / (float)imageOriginal.getWidth(), (float)Math.min(dialerWidth, dialerHeight) / (float)imageOriginal.getHeight());
                     imageScaled = Bitmap.createBitmap(imageOriginal, 0, 0, imageOriginal.getWidth(), imageOriginal.getHeight(), resize, false);
+                    imageOriginal = null;
 
-                    Canvas canvas = new Canvas(imageScaled);
-                    Paint paint = new Paint();
-                    paint.setColor(Color.BLACK);
-                    paint.setTextSize(15);
-                    if(lastactivity.equals("MapsActivity")) {
-                        String choice;
-                        searchlist = PlacesDisplayTask.placelist;
-                        choice = searchlist.get(0).substring(0,5);
-                        canvas.drawText(choice, 161, 108, paint);
-                        choice = searchlist.get(1).substring(0,5);
-                        canvas.drawText(choice, 114, 51, paint);
-                        choice = searchlist.get(2).substring(0,5);
-                        canvas.drawText(choice, 149, 83, paint);
-                        choice = searchlist.get(3).substring(0,5);
-                        canvas.drawText(choice, 180, 108, paint);
-                        choice = searchlist.get(4).substring(0,5);
-                        canvas.drawText(choice, 138, 153, paint);
-                        canvas.drawText("BOB", 74, 163, paint);
-                        canvas.drawText("BOB", 43, 128, paint);
-                        canvas.drawText("BOB", 26, 93, paint);
-                    }
-                    if(lastactivity.equals("TakeChoice")){
-                        String choice;
-                        searchlist = getIntent().getExtras().getStringArrayList("option");
-                       choice = searchlist.get(0);
-                        canvas.drawText(choice, 161, 108, paint);
-                       // for(int i = 0; i < searchlist.size(); i++){
-
-                       // }
-                    }
-                    /*
-                    canvas.save();
-                    canvas.rotate((float) 20, 74, 163);
-                    canvas.drawText("COC", 61, 186, paint);
-                    canvas.restore();
-                    canvas.save();
-                    canvas.rotate((float) 70, 14, 117);
-                    canvas.drawText("COC", 14, 117, paint);
-                    canvas.restore();
-                    canvas.save();
-                    canvas.rotate((float) 110, 23, 46);
-                    canvas.drawText("COC", 23, 46, paint);
-                    canvas.restore();
-                    */
                     float translateX = dialerWidth / 2 - imageScaled.getWidth() / 2;
                     float translateY = dialerHeight / 2 - imageScaled.getHeight() / 2;
                     dialer.setImageBitmap(imageScaled);
@@ -141,18 +141,8 @@ public class SpinWheel extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        System.out.println("wenge niubi");
         buttoncontroller = false;
         button.setText("STOP");
-       /* buttoncontroller++;
-        if(buttoncontroller % 2 == 1){
-            allowRotating = false;
-            button.setText("START");
-        }else{
-            allowRotating = true;
-            button.setText("PAUSE");
-        }
-        */
     }
 
     /**
@@ -171,24 +161,19 @@ public class SpinWheel extends Activity implements View.OnClickListener{
                     for(int i = 0; i< quadrantTouched.length; i++){
                         quadrantTouched[i] = false;
                     }
-                  //  allowRotating = false;
-
                     startAngle = getAngle(event.getX(), event.getY());
-                    System.out.println("x1:"+ event.getX() + "y1:" + event.getY());
                     break;
 
                 case MotionEvent.ACTION_MOVE:
                     double currentAngle = getAngle(event.getX(), event.getY());
                     rotateDialer((float) (startAngle - currentAngle));
                     startAngle = currentAngle;
-                    System.out.println("x2:"+ event.getX() + "y2:" + event.getY());
                     allowRotating = true;
                     break;
 
                 case MotionEvent.ACTION_UP:
                     allowRotating = true;
                     buttoncontroller = true;
-                    System.out.println("x3:"+ event.getX() + "y3:" + event.getY());
                     break;
             }
 
@@ -236,16 +221,121 @@ public class SpinWheel extends Activity implements View.OnClickListener{
 
         @Override
         public void run() {
-
-
             if(Math.abs(velovity) > 5 && allowRotating){
                  rotateDialer(velovity / 75);
                 if(!buttoncontroller) {
                     velovity /= 1.0666F;
+                   // velovity = 0;
                 }
                 dialer.post(this);
             }
+            else {
+                setTop();
+            }
         }
+    }
+
+    public void setTop(){
+        //get the total angle rotated in 360 degrees
+
+        totalRotation = totalRotation % 360;
+
+        //represent total rotation in positive value
+        if (totalRotation < 0) {
+            totalRotation = 360 + totalRotation;
+        }
+        switch(divCount) {
+            case 2:
+                if( totalRotation > 0 && totalRotation <= 180) selectedPosition = "B. " + searchlist.get(1);
+                else selectedPosition = "A. " + searchlist.get(0);
+                break;
+            case 3:
+                if( totalRotation > 0 && totalRotation <= 120) selectedPosition = "C. " + searchlist.get(2);
+                else if ( totalRotation > 120 && totalRotation <= 240) selectedPosition = "B. " + searchlist.get(1);
+                else selectedPosition = "A. " + searchlist.get(0);
+                break;
+            case 4:
+                if( totalRotation > 0 && totalRotation <= 90) selectedPosition = "D. " + searchlist.get(3);
+                else if ( totalRotation > 90 && totalRotation <= 180) selectedPosition = "C. " + searchlist.get(2);
+                else if ( totalRotation > 180 && totalRotation <= 270) selectedPosition = "B. " + searchlist.get(1);
+                else selectedPosition = "A. " + searchlist.get(0);
+                break;
+            case 5:
+                if( totalRotation > 0 && totalRotation <= 72) selectedPosition = "E. " + searchlist.get(4);
+                else if ( totalRotation > 72 && totalRotation <= 144) selectedPosition = "D. " + searchlist.get(3);
+                else if ( totalRotation > 144 && totalRotation <= 216) selectedPosition = "C. " + searchlist.get(2);
+                else if ( totalRotation > 216 && totalRotation <= 288) selectedPosition = "B. " + searchlist.get(1);
+                else selectedPosition = "A. " + searchlist.get(0);
+                break;
+            case 6:
+                if( totalRotation > 0 && totalRotation <= 60) selectedPosition = "F. " + searchlist.get(5);
+                else if ( totalRotation > 60 && totalRotation <= 120) selectedPosition = "E. " + searchlist.get(4);
+                else if ( totalRotation > 120 && totalRotation <= 180) selectedPosition = "D. " + searchlist.get(3);
+                else if ( totalRotation > 180 && totalRotation <= 240) selectedPosition = "C. " + searchlist.get(2);
+                else if ( totalRotation > 240 && totalRotation <= 300) selectedPosition = "B. " + searchlist.get(1);
+                else selectedPosition = "A. " + searchlist.get(0);
+                break;
+            case 7:
+                if( totalRotation > 0 && totalRotation <= (360/7)) selectedPosition = "G. " + searchlist.get(6);
+                else if ( totalRotation > (360/7) && totalRotation <= (360*2/7)) selectedPosition = "F. " + searchlist.get(5);
+                else if ( totalRotation > (360*2/7) && totalRotation <= (360*3/7)) selectedPosition = "E. " + searchlist.get(4);
+                else if ( totalRotation > (360*3/7) && totalRotation <= (360*4/7)) selectedPosition = "D. " + searchlist.get(3);
+                else if ( totalRotation > (360*4/7) && totalRotation <= (360*5/7)) selectedPosition = "C. " + searchlist.get(2);
+                else if ( totalRotation > (360*5/7) && totalRotation <= (360*6/7)) selectedPosition = "B. " + searchlist.get(1);
+                else selectedPosition = "A. " + searchlist.get(0);
+                break;
+            case 8:
+                if( totalRotation > 0 && totalRotation <= 45) selectedPosition = "H. " + searchlist.get(7);
+                else if ( totalRotation > 45 && totalRotation <= 90) selectedPosition = "G. " + searchlist.get(6);
+                else if ( totalRotation > 90 && totalRotation <= 135) selectedPosition = "F. " + searchlist.get(5);
+                else if ( totalRotation > 135 && totalRotation <= 180) selectedPosition = "E. " + searchlist.get(4);
+                else if ( totalRotation > 180 && totalRotation <= 225) selectedPosition = "D. " + searchlist.get(3);
+                else if ( totalRotation > 225 && totalRotation <= 270) selectedPosition = "C. " + searchlist.get(2);
+                else if ( totalRotation > 270 && totalRotation <= 315) selectedPosition = "B. " + searchlist.get(1);
+                else selectedPosition = "A. " + searchlist.get(0);
+                break;
+            default:
+                if( totalRotation > 0 && totalRotation <= 45) selectedPosition = "H." + searchlist.get(7);
+                else if ( totalRotation > 45 && totalRotation <= 90) selectedPosition = "G. " + searchlist.get(6);
+                else if ( totalRotation > 90 && totalRotation <= 135) selectedPosition = "F. " + searchlist.get(5);
+                else if ( totalRotation > 135 && totalRotation <= 180) selectedPosition = "E. " + searchlist.get(4);
+                else if ( totalRotation > 180 && totalRotation <= 225) selectedPosition = "D. " + searchlist.get(3);
+                else if ( totalRotation > 225 && totalRotation <= 270) selectedPosition = "C. " + searchlist.get(2);
+                else if ( totalRotation > 270 && totalRotation <= 315) selectedPosition = "B. " + searchlist.get(1);
+                else selectedPosition = "A. " + searchlist.get(0);
+        }
+        //calculate the no of divs the rotation has crossed
+  //      int no_of_divs_crossed = (int) ((totalRotation) / divAngle);
+
+        //calculate current top
+    //    top = (divCount + top + no_of_divs_crossed) % divCount; //change
+
+        //for next rotation, the initial total rotation will be the no of degrees
+        // inside the current top
+      //  totalRotation = totalRotation % divCount;
+
+
+        //snapping to the top's center
+    //    if (true) {
+
+            //calculate the angle to be rotated to reach the top's center.
+      //      double leftover = divAngle / 2 - totalRotation;
+
+        //    rotateDialer((float) (leftover));
+
+            //re-initialize total rotation
+         //   totalRotation = divAngle / 2;
+       // }
+
+        //set the currently selected option
+      //  if (top == 0) {
+      //      selectedPosition = divCount - 1;//loop around the array
+      //  } else {
+            //selectedPosition = top - 1;
+      //      selectedPosition = top - 1;
+       // }
+        //selectedPosition = top;
+        resultoption.setText(selectedPosition + "!!!");
     }
 
     private double getAngle(double xTouch, double yTouch) {
@@ -266,6 +356,14 @@ public class SpinWheel extends Activity implements View.OnClickListener{
         }
     }
 
+
+    public void setDivCount(int div) {
+        divAngle = 360 / div;
+        //totalRotation = -1 * (divAngle / 2);
+        totalRotation = 0;
+        top = 0;
+    }
+
     /**
      * @return The selected quadrant.
      */
@@ -280,6 +378,60 @@ public class SpinWheel extends Activity implements View.OnClickListener{
     private void rotateDialer(float degrees) {
         matrix.postRotate(degrees, dialerWidth / 2, dialerHeight / 2);
         dialer.setImageMatrix(matrix);
+
+        totalRotation = totalRotation + degrees; //add
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present. Inject xml to java code to nevigation bar
+        getMenuInflater().inflate(R.menu.menu_user_question, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        switch(id){
+            case R.id.userquetion:
+                try{
+                    Class rclass= Class.forName("com.example.evan.maps.UserQuestionActivity");
+                    Intent ourintent = new Intent(SpinWheel.this, rclass);
+                    startActivity(ourintent);
+                }catch(ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                return true;
+
+            case R.id.presetquestion:
+                try{
+                    Class rclass= Class.forName("com.example.evan.maps.PresetQuestionActivity");
+                    Intent ourintent = new Intent(SpinWheel.this, rclass);
+                    startActivity(ourintent);
+                }catch(ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                return true;
+            case R.id.homepage:
+                try{
+                    Class rclass= Class.forName("com.example.evan.maps.HomePageActivity");
+                    Intent ourintent = new Intent(SpinWheel.this, rclass);
+                    startActivity(ourintent);
+                }catch(ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                return true;
+        }
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }
